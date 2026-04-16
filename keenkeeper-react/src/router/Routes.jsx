@@ -4,6 +4,7 @@ import MainLayut from '../layout/MainLayut';
 import Error from '../pages/Error/Error';
 import Timeline from '../pages/Timeline/Timeline';
 import Stats from '../pages/Stats/Stats';
+import FriendDetails from '../pages/friendDetails/FriendDetails';
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path:'stats',
                 element:<Stats></Stats>
+            },
+            {
+                path:'friend/:id',
+                element:<FriendDetails></FriendDetails>
             }
         ]
         

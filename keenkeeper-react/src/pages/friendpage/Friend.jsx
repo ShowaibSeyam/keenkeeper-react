@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const statusLabel = (status) => {
   if (status === 'active') return 'Active';
@@ -13,12 +14,15 @@ const statusClass = (status) => {
 };
 
 const Friend = ({ friends }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className='mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 min-h-screen'>
+    <div className='mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 min-h-screen mb-5'>
       {friends.map((friend) => (
         <div
           key={friend.id}
-          className='card card-compact bg-white shadow-xl rounded-3xl p-6 mx-auto w-full max-w-xs'
+          onClick={() => navigate(`friend/${friend.id}`, { state: { friend } })}
+          className='card card-compact bg-white shadow-xl rounded-3xl p-6 mx-auto w-full max-w-xs cursor-pointer transition-transform duration-200 hover:-translate-y-1'
         >
           <div className='flex flex-col items-center text-center space-y-4'>
             <div className='avatar'>

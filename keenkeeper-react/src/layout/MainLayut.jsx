@@ -8,7 +8,7 @@ const MainLayut = () => {
         <div>
             <Navbar>
             </Navbar>
-            <main className='min-h-screen'>
+            <main>
                 <Outlet></Outlet>
             </main>
             <Footer></Footer>
