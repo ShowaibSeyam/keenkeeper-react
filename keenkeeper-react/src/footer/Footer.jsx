@@ -68,9 +68,15 @@ export default function KeenKeeperFooter() {
           }}
         >
           {[
-            { icon: <img src={Insta} alt="Insta" style={{ width: "20px", height: "20px" }} />, label: "Insta" },
-            { icon: <img src={FacebookIcon} alt="Facebook" style={{ width: "20px", height: "20px" }} />, label: "Facebook" },
-            { icon: <img src={XIcon} alt="X" style={{ width: "20px", height: "20px" }} />, label: "X" },
+            { icon: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <img src={Insta} alt="Insta" style={{ width: "20px", height: "20px" }} />
+            </a>, label: "Insta" },
+            { icon: <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <img src={FacebookIcon} alt="Facebook" style={{ width: "20px", height: "20px" }} />
+            </a>, label: "Facebook" },
+            { icon: <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <img src={XIcon} alt="X" style={{ width: "20px", height: "20px" }} />
+            </a>, label: "X" },
           ].map(({ icon, label }) => (
             <button
               key={label}
