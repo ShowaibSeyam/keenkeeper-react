@@ -40,9 +40,9 @@ const Friend = ({ friends }) => {
                   {tag}
                 </span>
               ))}
-              {/* <span className={`badge badge-sm ${statusClass(friend.status)} uppercase`}>
+              <span className={`badge badge-sm ${statusClass(friend.status)} uppercase`}>
                 {statusLabel(friend.status)}
-              </span> */}
+              </span>
             </div>
           </div>
         </div>
