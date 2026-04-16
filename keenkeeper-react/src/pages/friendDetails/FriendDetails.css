@@ -1,5 +1,57 @@
-.biglayout{
-    display:grid;
-    grid-template-columns: 3;
-    grid-template-rows: 2;
+/* Main two-column layout for the dashboard */
+.biglayout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Three-column layout for Stats and Quick Check-in */
+.smalllayout {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* Single-column stacked layout for the action buttons */
+.stacklayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 1.25rem;
+}
+
+/* Stat cards: equal height with vertically centered content */
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    text-align: center;
+}
+
+/* Check-in buttons: tall square shape matching the design */
+.checkin-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: auto !important;
+    min-height: 110px;
+    padding: 1.75rem 1rem !important;
+    gap: 10px;
+}
+
+/* Responsive breakdowns */
+@media (max-width: 1024px) {
+    .biglayout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .smalllayout {
+        grid-template-columns: 1fr;
+    }
 }
