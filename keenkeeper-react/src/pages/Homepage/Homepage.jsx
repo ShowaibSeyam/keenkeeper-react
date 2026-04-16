@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Friend from '../friendpage/Friend';
+import { friendsData } from '../../data';
 
 const Homepage = () => {
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
-        fetch('/data.json')
-            .then(res => res.json())
-            .then(data => setFriends(data))
-            // .catch(err => console.error('Failed to load friends:', err));
+        setFriends(friendsData);
     }, []);
 
     return (

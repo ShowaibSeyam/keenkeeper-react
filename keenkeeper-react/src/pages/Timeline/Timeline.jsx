@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaHandshake } from 'react-icons/fa';
+
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';

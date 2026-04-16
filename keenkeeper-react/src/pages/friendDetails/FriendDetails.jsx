@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { FiBell, FiArchive, FiTrash2, FiArrowLeft } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+import './FriendDetails.css';
+
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';
-import { toast } from 'react-toastify';
-import './FriendDetails.css';
 
 const statusLabel = (status) => {
     if (status === 'active') return 'Active';
