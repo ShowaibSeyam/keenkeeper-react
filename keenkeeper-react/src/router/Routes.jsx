@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
               Component:Homepage
             },
             {
+               
                 index: true,
                 element: <Homepage></Homepage>
             },
