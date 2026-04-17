@@ -7,6 +7,7 @@ import videoIcon from '../../assets/video.png';
 
 const Timeline = () => {
     const [events, setEvents] = useState([]);
+    const [filter, setFilter] = useState('');
 
     useEffect(() => {
         const storedEvents = JSON.parse(localStorage.getItem('timelineEvents') || '[]');
@@ -34,22 +35,25 @@ const Timeline = () => {
                 <h1 className='text-3xl font-bold text-slate-800 mb-6'>Timeline</h1>
 
                 <div className='mb-8'>
-                    <select className='select select-bordered w-full max-w-xs bg-white text-slate-500 border-slate-200'>
-                        <option>Filter timeline</option>
-                        <option>Meetup</option>
-                        <option>Call</option>
-                        <option>Text</option>
-                        <option>Video</option>
+                    <select 
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                        className='select select-bordered w-full max-w-xs bg-white text-slate-500 border-slate-200'>
+                        <option value="">Filter timeline</option>
+                        <option value="Meetup">Meetup</option>
+                        <option value="Call">Call</option>
+                        <option value="Text">Text</option>
+                        <option value="Video">Video</option>
                     </select>
                 </div>
 
                 <div className='space-y-3'>
-                    {events.length === 0 ? (
+                    {(filter ? events.filter(event => event.type?.toLowerCase() === filter.toLowerCase()) : events).length === 0 ? (
                         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 text-center text-slate-500">
                             No events in timeline yet. Go to a friend's profile and check in!
                         </div>
                     ) : (
-                        events.map((event, index) => (
+                        (filter ? events.filter(event => event.type?.toLowerCase() === filter.toLowerCase()) : events).map((event, index) => (
                             <div key={event.id || index} className='bg-white rounded-xl shadow-sm border border-slate-100 p-5 flex items-start gap-4'>
                                 <div className='mt-1 flex-shrink-0'>
                                     {getIcon(event.type)}
